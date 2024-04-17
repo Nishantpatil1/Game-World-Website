@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="logincss.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">Game World</a>
+
+      <ul class="nav">
+        <li><a href="D:\website python\main_website.html">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="D:\website python\signin.html">Sigin</a></li>
+        <li><a href="D:\website python\Login.html">Login</a></li>
+      </ul>
+    </header>
+
+    <div class="form">
+      <h1>Login</h1>
+      <div class="inputBx">
+        <p>Enter Email</p>
+        <input type="email" id="email" placeholder="enter id" />
+      </div>
+      <div class="inputBx">
+        <p>password</p>
+        <input type="password" id="password" placeholder="enter password" />
+      </div>
+      <br />
+      <div class="inputBx">
+        <input type="submit" id="login" value="Log in" name="Login" />
+      </div>
+      <a href="/signin.html" class="signin">SignIn</a>
+    </div>
+
+    <!-- <script src="/script.js"></script> -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+        ref,
+        update,
+      } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBQgqIqFYdUIzAj7LFdKjztU95hWGWu3p4",
+        authDomain: "game-world-1aa7d.firebaseapp.com",
+        databaseURL: "https://game-world-1aa7d-default-rtdb.firebaseio.com",
+        projectId: "game-world-1aa7d",
+        storageBucket: "game-world-1aa7d.appspot.com",
+        messagingSenderId: "861468744176",
+        appId: "1:861468744176:web:331a9ac480eb42cd18e535",
+        measurementId: "G-6GG7JN1ZMY",
+      };
+
+      let login = document.querySelector("#login")
+      console.log(login);
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth();
+      // Initialize variables
+
+      // full_name = document.getElementById("name").value;
+      //   email = document.getElementById("email").value;
+      //   gammerID = document.getElementById("gammerID").value;
+      //   contactNo = document.getElementById("contactNo").value;
+      //   password = document.getElementById("password").value;
+      //   confirmPassword = document.getElementById("confirmPassword").value;
+
+      // console.log(full_name + email + gammerID + contactNo + password)
+
+      login.addEventListener("click", (e) => {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+
+            const dt = new Date();
+            update(ref(database, "users/" + user.uid), {
+              last_login: dt,
+            });
+            alert("User Logged In!!");
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+          });
+      });
+    </script>
+  </body>
+</html>

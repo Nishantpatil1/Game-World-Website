@@ -1,0 +1,258 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device,initial-scale1.0">
+    <title>Game World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="javascript" href="script.js">
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Game World</a>
+        <ul class="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="signin.html">Sigin</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+        <div class="action">
+            <div class="SearchBx">
+                <a href="#">
+                    <li></i>
+                </a>
+                <input type="text" placeholder="Search Game" id="search1" onkeyup="engin()">
+
+
+            </div>
+        </div>
+
+    </header>
+    <!--Home Banner-->
+    <div class="banner" id="home">
+        <div class="bg">
+            <div class="content">
+                <h2 class="h2">A New Home For <br>
+                    Game Lover </h2>
+                <p class="para">Get lost in the game and find yourself in a whole new world</p>
+                <a href="#" class="btn">Join Now</a>
+            </div>
+            <img src="E:\website\image\creed.png">
+        </div>
+    </div>
+
+
+    <!--Games-->
+    <div class="games">
+        <h2>Popular Games </h2>
+        <ul>
+            <li class="list active" data-filter="All">All</li>
+            <li class="list" data-filter="pc">pc Games</li>
+            <li class="list" data-filter="arcade">arcade Games</li>
+        </ul>
+        <div class="cardBx">
+            <div class="card" data-item="pc">
+                <img src="E:\website\image\watchdog.png">
+                <div class="game_content">
+                    <h4>Watch Dogs 2</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>pricking<br></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-item="pc">
+                <img src="E:\website\image\GTA5.jpg">
+                <div class="game_content">
+                    <h4>Grand Theft Auto V</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>pricking<br></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-item="pc">
+                <img src="E:\website\image\Assassin's_Creed_Unity.jpg">
+                <div class="game_content">
+                    <h4>Assassin's Creed Unity</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>pricking<br></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="card" data-item="pc">
+                <img src="E:\website\image\cover-fire.jpg">
+                <div class="game_content">
+                    <h4>Cover Fire</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>pricking<br></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="card" data-item="arcade">
+                <img src="E:\website\image\super mario.webp">
+                <div class="game_content">
+                    <h4>Super Mario</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>pricking<br></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-item="arcade">
+                <img src="E:\website\image\donkey kong.jpg">
+                <div class="game_content">
+                    <h4>Donkey kong</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>pricking<br></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-item="arcade">
+                <img src="E:\website\image\crack down.jpg">
+                <div class="game_content">
+                    <h4>Crack Down</h4>
+                    <div class="progress-line"><span></span></div>
+                    <div class="info">
+                        <p>pricking<br></p>
+                        <a href="#">Play Now</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!--About-->
+    <div class="about" id="about">
+        <div class="contentBx">
+            <h2 class="aboutus">About Us</h2>
+            <p class="para2">Welcome to my gaming website! As a passionate gamer, I created this platform to share my love for gaming with others. From a young age, I've been captivated by the immersive worlds, exciting challenges, and endless possibilities of video games.
+
+                As a solo creator, I've worked tirelessly to bring you a variety of content that caters to gamers of all levels. From game reviews and tutorials to news and updates on the latest gaming trends, my website is a one-stop-shop for all things gaming.
+                
+                I believe that gaming is more than just a hobby - it's a way of life. That's why I'm committed to providing a space where gamers can come together, connect, and share their experiences with one another.
+                
+                I hope that my website becomes a go-to destination for fellow gamers looking to discover new games, improve their skills, and connect with like-minded individuals. Thank you for joining me on this gaming journey, and let's keep gaming on!
+            </p>
+        </div>
+        <div class="creed2">
+            <img src="E:\website\image\creed2.png">
+        </div>
+    </div>
+
+    <!--Contact-->
+
+    <div class="contact">
+        <img src="E:\website\image\gamer-room.jpg">
+        <div class="form">
+            <h1>Contact Us</h1>
+            <div class="inputBx">
+                <p>Enter Name</p>
+                <input type="text" placeholder="Full Name">
+            </div>
+            <div class="inputBx">
+                <p>Enter Email</p>
+                <input type="text" placeholder="Full Name">
+            </div>
+            <div class="inputBx">
+                <p>Enter Message</p>
+                <textarea placeholder="type here..."></textarea>
+            </div>
+            <div class="inputBx">
+                <input type="submit" name="Submit">
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+
+    <footer>
+        <div class="info">
+            <a href="#" class="logo">Game World</a>
+            <ul>
+                <li><a href="#"><img src="E:\website\image\instagram.png"></a></li>
+                <li><a href="#"><img src="E:\website\image\facebook.png"></a></li>
+                <li><a href="#"><img src="E:\website\image\twetter.png"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!--sticky navbar-->
+    <script src="/script.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('header')
+            header.classList.toggle('sticky', window.scrollY > 0)
+        });
+
+        /*filterable cards*/
+
+        let list = document.querySelectorAll('.list');
+        let card = document.querySelectorAll('.card');
+
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener('click', function () {
+                for (let j = 0; j < list.length; j++) {
+                    list[j].classList.remove('active');
+                }
+                this.classList.add('active');
+
+                let dataFilter = this.getAttribute('data-filter');
+
+                for (let k = 0; k < card.length; k++) {
+                    card[k].classList.remove('active');
+                    card[k].classList.add('hide');
+
+                    if (card[k].getAttribute('data-item') == dataFilter || dataFilter == 'All') {
+                        card[k].classList.remove('hide');
+                        card[k].classList.add('active');
+                    }
+                }
+            })
+        }
+        function engin() {
+            let filter = document.getElementById('search1').value.toUpperCase();
+            let items = document.querySelectorAll('.card');
+            let l = document.getElementsByTagName('h4');
+
+            for (var i = 0; i < l.length; i++) {
+                let a = items[i].getElementsByTagName('h4')[0];
+                let value = a.textContent;
+
+                if (value.toUpperCase().indexOf(filter) > -1) {
+                    items[i].style.display = "";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+
+
+
+    </script>
+    <!-- <script src="/script.js"></script> -->
+</body>
+
+</html>
